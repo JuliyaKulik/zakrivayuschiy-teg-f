@@ -6,4 +6,5 @@
     --wght-bold: 700;
     --header-width: min(100%, 700px);
     --section-width: min(100%, 696px);
+    --color-text-stroke: rgba(255 255 255 / 0.5);
 }
