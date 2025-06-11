@@ -13,6 +13,9 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-attachment: fixed;
   font-family: var(--main-font);
   font-variation-settings: "wght" var(--wght-normal);
   display: flex;
@@ -22,6 +25,7 @@
 }
 
 .header {
+  background-color: var(--bg-color);
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -34,7 +38,7 @@
   margin-block-end: 100px;
 }
 
-.page__width {
+.header__width {
   inline-size: var(--header-width);
 }
 
@@ -66,6 +70,7 @@
 }
 
 .card__title {
+  background-color: var(--bg-color);
   font-family: var(--main-font);
   font-variation-settings: "wght" var(--wght-bold);
   font-size: 18px;
@@ -83,6 +88,9 @@
 
 .card__container-img {
   position: relative;
+  border-inline-start: 2px solid #000;
+  border-inline-end: 2px solid #000;
+  border-block-end: 2px solid #000;
 }
 
 .card__img {
@@ -90,9 +98,38 @@
   inline-size: 100%;
   background-size: cover;
   background-position: center;
-  border-inline-start: 2px solid #000;
-  border-inline-end: 2px solid #000;
-  border-block-end: 2px solid #000;
+}
+
+.img__inception {
+  filter: blur(3px);
+}
+
+.img__fear {
+  filter: invert(100%);
+}
+
+.img__smile {
+  filter: saturate(280%);
+}
+
+.img__faraway {
+  filter: contrast(130%);
+}
+
+.img__team {
+  filter: sepia(80%);
+}
+
+.img__study {
+  filter: grayscale(100%);
+}
+
+.img__dancing {
+  filter: hue-rotate(125deg);
+}
+
+.img__target {
+  filter: brightness(200%) saturate(90%);
 }
 
 .label {
@@ -100,7 +137,6 @@
   inset-block-start: 25px;
   inset-inline-end: 25px;
   font-size: 14px;
-  color: rgb(0 0 0 / 0.5);
   mix-blend-mode: hard-light;
   text-shadow: -1px 0 var(--color-text-stroke), 
                 0 1px var(--color-text-stroke), 
@@ -117,6 +153,7 @@
 } 
 
 .card__content {
+  background-color: var(--bg-color);
   border-inline-start: 2px solid #000;
   border-inline-end: 2px solid #000;
   border-block-end: 2px solid #000;
@@ -145,12 +182,12 @@
 }
 
 .card__icon-button {
-  color: transparent;
+  background-color: var(--bg-color);
   border: none;
 }
 
 .button {
-  color: transparent;
+  background-color: var(--bg-color);
   border-inline-start: 2px solid #000;
   border-inline-end: 2px solid #000;
   border-block-start: 2px solid #000;
@@ -177,6 +214,7 @@
 
 .footer {
   margin-block-start: 50px;
+  margin-block-end: 100px;
 }
 
 .button__save {
@@ -212,8 +250,7 @@
 
 .dialog__content {
   display: flex;
-  gap: 12px;
-  justify-content: center;
+  gap: 20px;
   align-items: center;
 }
 
@@ -233,11 +270,47 @@
 }
 
 .button__ok {
-  padding-block-start: 12.5px;
-  padding-block-end: 12.5px;
-  padding-inline-start: 132.5px;
-  padding-inline-end: 132.5px;
+  padding-block-start: 8px;
+  padding-block-end: 8px;
+  padding-inline-start: 130px;
+  padding-inline-end: 130px;
 }
+
+.button__text-ok {
+  text-transform: uppercase;
+}
+
+
+@media (width <= 375px) {
+  .label {
+    inset-inline-end: 13px;
+  }
+
+  .button__save {
+    flex-direction: column;
+  }
+
+  .floppy-button {
+    width: 28px;
+    height: 28px;
+  }
+
+  .dialog__save {
+    padding-inline-start: 42px;
+    padding-inline-end: 42px;
+  }
+
+  .dialog__save[open] {
+    white-space: nowrap;
+  }
+
+  .button__ok {
+    padding-inline-start: 108px;
+    padding-inline-end: 108px;
+  }
+}
+
+
 
 
 
